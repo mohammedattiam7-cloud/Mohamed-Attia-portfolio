@@ -26,6 +26,8 @@ export async function generateMetadata() {
   });
 }
 
+
+
 export default function Home() {
   return (
     <Column fillWidth maxWidth="m" gap="xl" paddingY="12" horizontal="center">
