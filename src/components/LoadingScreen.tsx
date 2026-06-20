@@ -33,6 +33,7 @@ export const LoadingScreen: React.FC = () => {
           setTimeout(() => {
             setVisible(false);
             sessionStorage.setItem("loading-shown", "1");
+            window.dispatchEvent(new Event("loading-complete"));
           }, mq.matches ? 0 : 500);
         }, 200);
       }

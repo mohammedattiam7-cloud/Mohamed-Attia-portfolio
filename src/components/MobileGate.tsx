@@ -15,16 +15,24 @@ export const MobileGate: React.FC = () => {
   useEffect(() => {
     const dismissed = sessionStorage.getItem("mobile-gate-dismissed");
     if (dismissed) return;
+    if (window.innerWidth >= BREAKPOINT) return;
 
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduced(mq.matches);
 
-    if (window.innerWidth < BREAKPOINT) {
+    const activate = () => {
       previousFocus.current = document.activeElement as HTMLElement;
       setShow(true);
       requestAnimationFrame(() => {
         requestAnimationFrame(() => setAnimateIn(true));
       });
+    };
+
+    if (sessionStorage.getItem("loading-shown")) {
+      activate();
+    } else {
+      window.addEventListener("loading-complete", activate, { once: true });
+      return () => window.removeEventListener("loading-complete", activate);
     }
   }, []);
 
@@ -89,31 +97,14 @@ export const MobileGate: React.FC = () => {
         justifyContent: "flex-end",
       }}
     >
-      {/* Backdrop with blurred avatar */}
+      {/* Dimmed transparent backdrop */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background: "var(--page-background)",
-          opacity: animateIn ? 0.85 : 0,
+          opacity: animateIn ? 0.6 : 0,
           transition: reduced ? "none" : "opacity 400ms ease",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          top: "20%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "180px",
-          height: "180px",
-          borderRadius: "50%",
-          backgroundImage: "url(/images/profile.PNG)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "blur(20px)",
-          opacity: animateIn ? 0.3 : 0,
-          transition: reduced ? "none" : "opacity 600ms ease",
         }}
       />
 
@@ -123,7 +114,7 @@ export const MobileGate: React.FC = () => {
         style={{
           position: "relative",
           zIndex: 1,
-          background: "var(--surface-background)",
+          background: "var(--page-background)",
           borderTop: "1px solid var(--neutral-alpha-weak)",
           borderRadius: "var(--radius-xl, 24px) var(--radius-xl, 24px) 0 0",
           padding: "var(--static-space-12) var(--static-space-24) var(--static-space-40)",
@@ -186,8 +177,8 @@ export const MobileGate: React.FC = () => {
               textAlign: "center",
             }}
           >
-            <span style={{ color: "var(--brand-on-background-strong)" }}>BETTER</span>{" "}
-            <span style={{ color: "var(--neutral-on-background-strong)" }}>ON DESKTOP</span>
+            <span style={{ color: "var(--neutral-on-background-strong)" }}>BETTER ON </span>
+            <span style={{ color: "var(--brand-on-background-strong)" }}>DESKTOP</span>
           </span>
         </div>
 
