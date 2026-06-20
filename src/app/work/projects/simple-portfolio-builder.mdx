@@ -1,0 +1,128 @@
+---
+title: "One token source. Every theme follows."
+pageTitle: "How a layered token system turned theming from a redesign project into a config change"
+publishedAt: "2024-04-08"
+summary: "Layered token architecture driving light, dark, multi-brand, and Arabic RTL. New themes ship in hours, not weeks, zero hardcoded values."
+images:
+  - "/images/projects/design-tokens/photo-01.jpg"
+  - "/images/projects/design-tokens/photo-02.jpg"
+  - "/images/projects/design-tokens/photo-03.jpg"
+team: []
+---
+
+<ScaleStats />
+
+## Overview
+
+A scalable token system built to support multiple brands and contexts from a single source of truth. Instead of designing one theme and duplicating it, the system separates raw values, meaning, and component usage into three layers — so a new brand, language, or density swaps in by changing a mode, not by rebuilding screens.
+
+## The Challenge
+
+The seven theme dimensions don't add up — they multiply. A single screen could be Diamond × Dark × Arabic × Serif × Compact × Pills × Raised, which is one of 576 valid combinations.
+
+The real problem was never visual styling. It was structure: how do you build a system where hundreds of theme combinations stay consistent, maintainable, and ready for engineers — without the file collapsing into chaos?
+
+## The 3-Tier Architecture
+
+<Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+  Every token flows through three layers. Each layer has one job — and only references the layer above it. This is what keeps 576 combinations under control.
+</Text>
+
+<Row fillWidth gap="m" marginTop="16" s={{ direction: "column" }}>
+  <Column flex={1} paddingX="m" paddingY="m" radius="m" border="neutral-alpha-weak" gap="8" className="static-card">
+    <Text variant="label-default-s" onBackground="neutral-weak">Layer 1</Text>
+    <Text variant="body-strong-m" onBackground="neutral-strong">Option</Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">Raw, primitive values. The full color palettes, type scales and base dimensions — no meaning attached yet.</Text>
+  </Column>
+  <Column flex={1} paddingX="m" paddingY="m" radius="m" border="neutral-alpha-weak" gap="8" className="static-card">
+    <Text variant="label-default-s" onBackground="neutral-weak">Layer 2</Text>
+    <Text variant="body-strong-m" onBackground="neutral-strong">Semantic</Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">Intent and T-shirt scales. Maps raw values to roles (background, foreground) and sizing (sm–xl). Holds the Light/Dark and Serif/Sans modes.</Text>
+  </Column>
+  <Column flex={1} paddingX="m" paddingY="m" radius="m" border="neutral-alpha-weak" gap="8" className="static-card">
+    <Text variant="label-default-s" onBackground="neutral-weak">Layer 3</Text>
+    <Text variant="body-strong-m" onBackground="neutral-strong">Component</Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">Component-specific tokens with brand, density, radius, shadow and language modes. This is what components actually consume.</Text>
+  </Column>
+</Row>
+
+<Carousel
+  className="carousel-brand"
+  marginTop="40"
+  marginBottom="80"
+  aspectRatio="16 / 9"
+  radius="m"
+  border="neutral-alpha-medium"
+  sizes="(max-width: 960px) 100vw, 960px"
+  items={[
+    { slide: "/images/projects/design-tokens/photo-04.jpg", alt: "Tokens Architecture infographic showing the 3-tier token system flowing from Foundation (primitive colors, effects, density, typography) to Semantic (theme, effects, density, typography aliases) to Component (brand, shadow, density, language tokens)" },
+    { slide: "/images/projects/design-tokens/photo-05.jpg", alt: "Token system detail view" },
+  ]}
+/>
+
+<TokenDecisions />
+
+## Handoff to Code
+
+A design system only matters if engineers can use it. Each theme axis exports as its own CSS file, so developers pull only the layers they need and compose the final runtime theme — brand + mode + language + density + radius + shadow.
+
+<Carousel
+  className="carousel-brand"
+  marginTop="8"
+  marginBottom="16"
+  aspectRatio="16 / 9"
+  radius="m"
+  border="neutral-alpha-medium"
+  sizes="(max-width: 960px) 100vw, 960px"
+  items={[
+    { slide: "/images/projects/design-tokens/photo-09.jpg", alt: "The same meetings component rendered twice — once in English (LTR) and once in Arabic (RTL) — proving the language token layer mirrors layout and typography automatically" },
+    { slide: "/images/projects/design-tokens/photo-10.jpg", alt: "The same meetings component rendered twice — once in English (LTR) and once in Arabic (RTL) — proving the language token layer mirrors layout and typography automatically" },
+  ]}
+/>
+
+<Row fillWidth gap="l" marginTop="32" marginBottom="16" s={{ direction: "column" }}>
+
+  <Column
+    flex={4}
+    gap="16"
+    position="sticky"
+    top="80"
+    fitHeight
+    s={{ position: "relative" }}
+  >
+    <Heading as="h2" variant="heading-strong-xl" onBackground="neutral-strong">
+      What This Project Proves
+    </Heading>
+    <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+      One system, demonstrating the three things that matter most in a design-systems role.
+    </Text>
+  </Column>
+
+  <Column
+    flex={6}
+    gap="40"
+    style={{ borderLeft: "2px solid var(--brand-border-medium)", paddingLeft: "var(--static-space-32)" }}
+  >
+    <Column gap="8">
+      <Heading as="h3" variant="heading-strong-s" onBackground="neutral-strong">I can architect systems that scale</Heading>
+      <Text variant="body-default-m" onBackground="neutral-medium">
+        A three-tier model holding 576 theme combinations across ~1,060 variables — structured to grow, not to break.
+      </Text>
+    </Column>
+
+    <Column gap="8">
+      <Heading as="h3" variant="heading-strong-s" onBackground="neutral-strong">I design for engineering handoff</Heading>
+      <Text variant="body-default-m" onBackground="neutral-medium">
+        Tokens export as layered CSS files that compose into runtime themes — built around how developers actually consume them.
+      </Text>
+    </Column>
+
+    <Column gap="8">
+      <Heading as="h3" variant="heading-strong-s" onBackground="neutral-strong">I handle real complexity</Heading>
+      <Text variant="body-default-m" onBackground="neutral-medium">
+        Multi-brand theming, light/dark, density and radius variants, plus true RTL and i18n handled at the token level.
+      </Text>
+    </Column>
+  </Column>
+
+</Row>
