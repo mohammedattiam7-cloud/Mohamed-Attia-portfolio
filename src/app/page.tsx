@@ -108,7 +108,7 @@ export default function Home() {
         <Projects range={[1, 1]} />
       </RevealFx>
       <Projects range={[2]} />
-      <Connect />
+      <Connect id="connect" />
     </Column>
   );
 }
