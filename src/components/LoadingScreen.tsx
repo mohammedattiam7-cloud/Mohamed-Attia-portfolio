@@ -18,7 +18,7 @@ export const LoadingScreen: React.FC = () => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduced(mq.matches);
 
-    const duration = mq.matches ? 400 : 1800;
+    const duration = mq.matches ? 400 : 3000;
     const start = performance.now();
 
     const tick = (now: number) => {
