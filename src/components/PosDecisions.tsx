@@ -76,7 +76,7 @@ export const PosDecisions: React.FC = () => {
     return (
       <Column fillWidth gap="m">
         {cards.map((card) => (
-          <Column key={card.insight} padding="l" radius="l" background="surface" border="neutral-alpha-weak" gap="l">
+          <Column key={card.insight} padding="l" radius="l" gap="l">
             {card.imageSrc && <Media aspectRatio="16 / 9" radius="m" border="neutral-alpha-weak" src={card.imageSrc ?? ""} alt={card.imageAlt ?? ""} />}
             <Column gap="16">
               {card.title && (
@@ -138,9 +138,6 @@ export const PosDecisions: React.FC = () => {
                 }}
               >
                 <div className={styles.card}>
-                  <span className={styles.cardNumber} aria-hidden="true">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <div className={`${styles.inner} ${imageLeft ? styles.imgLeft : styles.imgRight}`}>
                     {card.imageSrc && (
                       <div className={styles.imageFrame}>
