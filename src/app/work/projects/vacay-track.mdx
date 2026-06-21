@@ -83,3 +83,28 @@ I ran three research activities before designing anything — to make sure the p
 <Line marginTop="40" marginBottom="40" />
 
 <OutcomeReflection />
+
+<Line marginTop="64" marginBottom="64" />
+
+<Column overflow="hidden" fillWidth padding="xl" radius="l" background="surface" border="neutral-alpha-weak" horizontal="center" align="center" gap="32">
+  <Background
+    top="0"
+    left="0"
+    fillWidth
+    position="absolute"
+    mask={{ cursor: true, x: 50, y: 0, radius: 100 }}
+    gradient={{ display: true, opacity: 90, x: 50, y: 0, width: 50, height: 50, tilt: 0, colorStart: "accent-background-strong", colorEnd: "static-transparent" }}
+    dots={{ display: true, opacity: 20, size: "2", color: "brand-on-background-weak" }}
+    grid={{ display: false, opacity: 100, color: "neutral-alpha-medium", width: "0.25rem", height: "0.25rem" }}
+    lines={{ display: false, opacity: 100, color: "neutral-alpha-medium", size: "16", thickness: 1, angle: 90 }}
+  />
+  <Icon name="thankYou" style={{ fontSize: "56px" }} />
+  <Column horizontal="center" align="center" gap="12" style={{ maxWidth: "560px" }}>
+    <Heading as="h2" variant="heading-strong-xl" align="center" style={{ fontSize: "32px" }}>Thanks for reading</Heading>
+    <Text variant="body-default-l" onBackground="neutral-weak" align="center">Every screen here started as a decision. Happy to talk through any of them.</Text>
+  </Column>
+  <Row gap="12" horizontal="center" fillWidth>
+    <Button href="/#connect" variant="primary" label="Contact me" size="l" style={{ flex: 1 }} />
+    <Button href="/work/tappya-restaurant-pos" variant="secondary" label="Next project →" size="l" style={{ flex: 1 }} />
+  </Row>
+</Column>
