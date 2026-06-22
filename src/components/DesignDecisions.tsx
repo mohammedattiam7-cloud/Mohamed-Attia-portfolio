@@ -6,10 +6,10 @@ import styles from "./DesignDecisions.module.scss";
 
 const cards = [
   {
-    problem: "No system existed yet. To check their leave balance, employees had to ask HR every time a basic question that turned into a manual back and forth.",
-    insight: "Research showed people wanted their balance right at the moment of requesting leave — not chased down through someone else.",
-    decision: "Building from scratch, I placed the balance inline the moment a leave type is selected Sick leave (Balance: 5 days) with a dedicated screen for the full view.",
-    goal: "Turn ask HR first into a self-service moment confident decisions, in context.",
+    problem: "No system existed. Every leave question went through HR  balance, status, history. A 10 second answer turned into a manual back-and-forth.",
+    insight: "People didn't want a form. They wanted the full picture: how many days are left, and what happened to the requests they already sent without asking anyone.",
+    decision: "I built one screen that answers everything. Four balance cards by leave type, live request status (Pending / Approved), and a clear \"Apply\" entry point. The whole leave life lives in one place.",
+    goal: "Turn ask HR first  into  open the app and know. Self service, at a glance.",
     imageSrc: "/images/projects/vacay-track/image03.jpg",
     imageAlt: "Leave type picker showing balance inline",
     emphasized: true,
