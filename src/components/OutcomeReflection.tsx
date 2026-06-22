@@ -15,8 +15,8 @@ const defaults: Props = {
   eyebrow: "Outcome & Reflection",
   heading: "What shipped and what I'd do next",
   delivered: [
-    { value: "N",             label: "screens" },
-    { value: "X",             label: "core flows" },
+    { value: "75+",            label: "screens" },
+    { value: "20+",            label: "core flows" },
     { value: "Design system", label: "tokens · components · states" },
     { value: "Light + dark",  label: "handoff-ready" },
   ],
