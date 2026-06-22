@@ -70,7 +70,7 @@ export const TokenDecisions: React.FC = () => {
         {header}
         <Column fillWidth gap="m">
           {cards.map((card) => (
-            <Column key={card.insight} padding="l" radius="l" background="surface" border="neutral-alpha-weak" gap="l">
+            <Column key={card.insight} padding="l" radius="l" gap="l">
               <Media aspectRatio="1 / 1" radius="m" border="neutral-alpha-weak" src={card.imageSrc} alt={card.imageAlt} />
               <Column gap="16">
                 <Column gap="4">
@@ -116,9 +116,6 @@ export const TokenDecisions: React.FC = () => {
                   }}
                 >
                   <div className={styles.card}>
-                    <span className={styles.cardNumber} aria-hidden="true">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
                     <div className={`${styles.inner} ${imageLeft ? styles.imgLeft : styles.imgRight}`}>
                       <div className={styles.imageFrame}>
                         <Media aspectRatio="1 / 1" radius="m" border="neutral-alpha-weak" src={card.imageSrc} alt={card.imageAlt} sizes="(max-width: 768px) 100vw, 320px" />
