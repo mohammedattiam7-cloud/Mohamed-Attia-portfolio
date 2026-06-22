@@ -15,14 +15,6 @@ const cards = [
     emphasized: true,
   },
   {
-    insight: "Opaque request status created anxiety after submitting.",
-    decision: "A live shift card on Home, clear status tags on every request (Pending, Approved, Rejected, Canceled), and a full request history.",
-    goal: "The user always knows where they stand.",
-    imageSrc: "/images/projects/vacay-track/image04.jpg",
-    imageAlt: "Home shift card and request list with status tags",
-    emphasized: false,
-  },
-  {
     insight: "Everything lived in separate tools.",
     decision: "One Home that summarizes tasks, requests, and attendance, each with a \"See all\" entry point.",
     goal: "Delivers the core promise while keeping it simple.",
@@ -68,7 +60,7 @@ export const DesignDecisions: React.FC = () => {
     <Column gap="8">
       <Heading as="h2" variant="heading-strong-xl">Design Decisions</Heading>
       <Text variant="body-default-l" onBackground="neutral-weak">
-        Three decisions shaped directly by what I found in research.
+        Two decisions shaped directly by what I found in research.
       </Text>
     </Column>
   );

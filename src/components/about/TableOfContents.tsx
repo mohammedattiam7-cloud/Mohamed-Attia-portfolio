@@ -52,13 +52,13 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
         .map((section, sectionIndex) => (
           <Column key={sectionIndex} gap="12">
             <Flex
-              cursor="interactive"
+              style={{ cursor: "pointer" }}
               className={styles.hover}
               gap="8"
               vertical="center"
               onClick={() => scrollTo(section.title, 80)}
             >
-              <Flex height="1" minWidth="16" background="neutral-strong"></Flex>
+              <Flex style={{ height: "1px", minWidth: "16px" }} background="neutral-strong" />
               <Text>{section.title}</Text>
             </Flex>
             {about.tableOfContent.subItems && (
@@ -74,7 +74,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
                     vertical="center"
                     onClick={() => scrollTo(item, 80)}
                   >
-                    <Flex height="1" minWidth="8" background="neutral-strong"></Flex>
+                    <Flex style={{ height: "1px", minWidth: "8px" }} background="neutral-strong" />
                     <Text>{item}</Text>
                   </Flex>
                 ))}
