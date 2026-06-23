@@ -72,7 +72,7 @@ export const DesignDecisions: React.FC = () => {
         <Column fillWidth gap="m">
           {cards.map((card) => (
             <Column key={card.insight} padding="l" radius="l" gap="l">
-              <Media aspectRatio="16 / 9" radius="m" border="neutral-alpha-weak" src={card.imageSrc} alt={card.imageAlt} />
+              <Media aspectRatio="9 / 16" radius="m" border="neutral-alpha-weak" src={card.imageSrc} alt={card.imageAlt} style={{ objectPosition: "center" }} />
               <Column gap="16">
                 {card.problem && (
                   <Column gap="4">

@@ -94,7 +94,8 @@
 
   .imageFrame {
     flex: none;
-    max-width: 60%;
+    max-width: 50%;
     margin: 0 auto;
+    overflow: hidden;
   }
 }
