@@ -71,7 +71,7 @@ export const DesignDecisions: React.FC = () => {
         {header}
         <Column fillWidth gap="m">
           {cards.map((card) => (
-            <Column key={card.insight} padding="l" radius="l" background="surface" border="neutral-alpha-weak" gap="l">
+            <Column key={card.insight} padding="l" radius="l" gap="l">
               <Media aspectRatio="16 / 9" radius="m" border="neutral-alpha-weak" src={card.imageSrc} alt={card.imageAlt} />
               <Column gap="16">
                 {card.problem && (
@@ -123,9 +123,6 @@ export const DesignDecisions: React.FC = () => {
                 }}
               >
                 <div className={styles.card}>
-                  <span className={styles.cardNumber} aria-hidden="true">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <div className={`${styles.inner} ${imageLeft ? styles.imgLeft : styles.imgRight}`}>
                     <div className={styles.imageFrame}>
                       <Media aspectRatio="9 / 16" radius="m" border="neutral-alpha-weak" src={card.imageSrc} alt={card.imageAlt} sizes="(max-width: 768px) 100vw, 240px" />
