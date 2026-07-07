@@ -88,7 +88,7 @@ export default function Home() {
             </Button>
             <Button
               data-border="rounded"
-              href="/resume.pdf"
+              href="https://drive.google.com/drive/folders/1E8DfKcngBlVx9cz7yQV8M9WEBAwYZs8E"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"
