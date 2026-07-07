@@ -88,7 +88,7 @@ export default function Home() {
             </Button>
             <Button
               data-border="rounded"
-              href="https://drive.google.com/drive/folders/1E8DfKcngBlVx9cz7yQV8M9WEBAwYZs8E"
+              href="https://drive.google.com/file/d/1knNU1509qNZO7qu2meNxM4wKYO8evhcN/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"
