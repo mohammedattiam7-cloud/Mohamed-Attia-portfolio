@@ -13,3 +13,4 @@ export { KeyInsights } from "@/components/KeyInsights";
 export { DesignDecisions } from "@/components/DesignDecisions";
 export { FinalDesigns } from "@/components/FinalDesigns";
 export { OutcomeReflection } from "@/components/OutcomeReflection";
+export { StatsRow } from "@/components/StatsRow";

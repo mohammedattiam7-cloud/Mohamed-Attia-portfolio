@@ -2,19 +2,16 @@ import {
   Heading,
   Text,
   Button,
-  Avatar,
   RevealFx,
   Column,
   Badge,
   Row,
   Schema,
   Meta,
-  Line,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
-import { Connect } from "@/components";
+import { home, about, person, baseURL } from "@/resources";
+import { Connect, StatsRow } from "@/components";
 import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -78,31 +75,33 @@ export default function Home() {
             {home.subline}
           </Text>
         </RevealFx>
-        <Column horizontal="center" align="center">
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
+        <RevealFx translateY="8" delay={0.4} fillWidth horizontal="center">
+          <Row gap="12" horizontal="center" s={{ direction: "column", align: "center" }}>
             <Button
-              id="about"
               data-border="rounded"
-              href={about.path}
+              href="#connect"
               variant="secondary"
               size="m"
               weight="default"
-              arrowIcon
             >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Row>
+              Contact me
             </Button>
-          </RevealFx>
-        </Column>
+            <Button
+              data-border="rounded"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              size="m"
+              weight="default"
+            >
+              View Resume
+            </Button>
+          </Row>
+        </RevealFx>
+        <RevealFx translateY="8" delay={0.6} fillWidth horizontal="center" paddingTop="32">
+          <StatsRow />
+        </RevealFx>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />

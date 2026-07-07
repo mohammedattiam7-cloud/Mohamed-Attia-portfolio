@@ -68,6 +68,10 @@
   /*
 }*/
 
+html {
+  scroll-behavior: smooth;
+}
+
 [data-theme=dark]  .static-card { background-color: #141414 !important; }
 [data-theme=light] .static-card { background-color: #F9FEFF !important; }
 
