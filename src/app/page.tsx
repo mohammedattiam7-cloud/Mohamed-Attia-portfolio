@@ -78,15 +78,6 @@ export default function Home() {
           <Row gap="12" horizontal="center" s={{ direction: "column", align: "center" }}>
             <Button
               data-border="rounded"
-              href="#connect"
-              variant="secondary"
-              size="m"
-              weight="default"
-            >
-              Contact me
-            </Button>
-            <Button
-              data-border="rounded"
               href="https://drive.google.com/file/d/1knNU1509qNZO7qu2meNxM4wKYO8evhcN/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -95,6 +86,15 @@ export default function Home() {
               weight="default"
             >
               View Resume
+            </Button>
+            <Button
+              data-border="rounded"
+              href="#connect"
+              variant="secondary"
+              size="m"
+              weight="default"
+            >
+              Contact me
             </Button>
           </Row>
         </RevealFx>
