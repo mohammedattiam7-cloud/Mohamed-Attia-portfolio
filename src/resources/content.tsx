@@ -1,5 +1,5 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Mohamed",
@@ -64,15 +64,14 @@ const home: Home = {
   featured: {
     display: true,
     title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Portfolio</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+      <Row gap="8" vertical="center">
+        <span className="live-dot" />
+        <Text variant="label-default-s" onBackground="brand-strong" marginRight="4">
+          Available For New Opportunity
         </Text>
       </Row>
     ),
-    href: "/work/tappya-restaurant-pos",
+    href: "",
   },
   subline: (
     <>

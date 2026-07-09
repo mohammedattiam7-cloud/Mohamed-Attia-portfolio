@@ -72,6 +72,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  flex-shrink: 0;
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(1.5); opacity: 0.5; }
+}
+
 [data-theme=dark]  .static-card { background-color: #141414 !important; }
 [data-theme=light] .static-card { background-color: #F9FEFF !important; }
 

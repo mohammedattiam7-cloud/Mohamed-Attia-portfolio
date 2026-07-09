@@ -58,7 +58,6 @@ export default function Home() {
                 onBackground="neutral-strong"
                 textVariant="label-default-s"
                 arrow={false}
-                href={home.featured.href}
               >
                 <Row paddingY="2">{home.featured.title}</Row>
               </Badge>
