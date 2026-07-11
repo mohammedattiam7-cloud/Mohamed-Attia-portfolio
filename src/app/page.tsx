@@ -47,128 +47,131 @@ export default function Home() {
         }}
       />
 
-      {/* Hero — two column */}
-      <Row fillWidth gap="64" vertical="center" s={{ direction: "column", gap: "xl" }}>
+      {/* Hero + Stats share a tighter 40 px gap between them */}
+      <Column fillWidth gap="40">
 
-        {/* ── Left: text content ── */}
-        <Column flex={1} gap="l" align="start">
+        {/* Two-column hero */}
+        <Row fillWidth gap="64" vertical="center" s={{ direction: "column", gap: "xl" }}>
 
-          {home.featured.display && (
-            <RevealFx fillWidth paddingTop="16">
-              <Badge
-                background="brand-alpha-weak"
-                paddingX="12"
-                paddingY="4"
-                onBackground="neutral-strong"
-                textVariant="label-default-s"
-                arrow={false}
-              >
-                <Row paddingY="2">{home.featured.title}</Row>
-              </Badge>
-            </RevealFx>
-          )}
-
-          <RevealFx translateY="4" delay={0.1} fillWidth>
-            <Heading wrap="balance" variant="display-strong-l" className="hero-heading">
-              {home.headline}
-            </Heading>
-          </RevealFx>
-
-          <RevealFx translateY="8" delay={0.2} fillWidth>
-            <Text
-              wrap="balance"
-              onBackground="neutral-weak"
-              variant="body-default-l"
-              className="hero-subline"
-            >
-              {home.subline}
-            </Text>
-          </RevealFx>
-
-          <RevealFx translateY="8" delay={0.3} fillWidth>
-            <Row gap="12" s={{ direction: "column" }}>
-              <Button
-                data-border="rounded"
-                href="/work"
-                variant="primary"
-                size="m"
-                weight="default"
-              >
-                View My Work
-              </Button>
-              <Button
-                data-border="rounded"
-                href="https://drive.google.com/file/d/1knNU1509qNZO7qu2meNxM4wKYO8evhcN/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="secondary"
-                size="m"
-                weight="default"
-                suffixIcon="arrowRight"
-              >
-                View Resume
-              </Button>
-            </Row>
-          </RevealFx>
-
-          <RevealFx delay={0.4} fillWidth>
-            <Row gap="4">
-              {heroSocials.map((item) => (
-                <IconButton
-                  key={item.name}
-                  href={item.link}
-                  icon={item.icon}
-                  variant="ghost"
-                  size="m"
-                  aria-label={item.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              ))}
-            </Row>
-          </RevealFx>
-
-        </Column>
-
-        {/* ── Right: profile photo ── */}
-        <Column horizontal="center" vertical="center">
-          <RevealFx translateY="8" delay={0.2}>
-            <div className="hero-photo-wrapper">
-              <div className="hero-photo-ring">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={person.avatar}
-                  alt={person.name}
-                  className="hero-photo-img"
-                />
-              </div>
-              <div className="hero-role-badge">
+          {/* Left: text content */}
+          <Column flex={1} gap="l" align="start">
+            {home.featured.display && (
+              <RevealFx fillWidth paddingTop="16">
                 <Badge
-                  background="neutral-alpha-weak"
+                  background="brand-alpha-weak"
                   paddingX="12"
                   paddingY="4"
                   onBackground="neutral-strong"
                   textVariant="label-default-s"
                   arrow={false}
                 >
-                  <Row gap="8" vertical="center" paddingY="2">
-                    <span className="role-dot" />
-                    <Text variant="label-default-s" onBackground="neutral-strong">
-                      {person.role}
-                    </Text>
-                  </Row>
+                  <Row paddingY="2">{home.featured.title}</Row>
                 </Badge>
+              </RevealFx>
+            )}
+
+            <RevealFx translateY="4" delay={0.1} fillWidth>
+              <Heading wrap="balance" variant="display-strong-l" className="hero-heading">
+                {home.headline}
+              </Heading>
+            </RevealFx>
+
+            <RevealFx translateY="8" delay={0.2} fillWidth>
+              <Text
+                wrap="balance"
+                onBackground="neutral-weak"
+                variant="body-default-l"
+                className="hero-subline"
+              >
+                {home.subline}
+              </Text>
+            </RevealFx>
+
+            <RevealFx translateY="8" delay={0.3} fillWidth>
+              <Row gap="12" s={{ direction: "column" }}>
+                <Button
+                  data-border="rounded"
+                  href="/work"
+                  variant="primary"
+                  size="m"
+                  weight="default"
+                >
+                  View My Work
+                </Button>
+                <Button
+                  data-border="rounded"
+                  href="https://drive.google.com/file/d/1knNU1509qNZO7qu2meNxM4wKYO8evhcN/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="secondary"
+                  size="m"
+                  weight="default"
+                  suffixIcon="arrowRight"
+                >
+                  View Resume
+                </Button>
+              </Row>
+            </RevealFx>
+
+            <RevealFx delay={0.4} fillWidth>
+              <Row gap="4">
+                {heroSocials.map((item) => (
+                  <IconButton
+                    key={item.name}
+                    href={item.link}
+                    icon={item.icon}
+                    variant="ghost"
+                    size="m"
+                    aria-label={item.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                ))}
+              </Row>
+            </RevealFx>
+          </Column>
+
+          {/* Right: profile photo */}
+          <Column horizontal="center" vertical="center">
+            <RevealFx translateY="8" delay={0.2}>
+              <div className="hero-photo-wrapper">
+                <div className="hero-photo-ring">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={person.avatar}
+                    alt={person.name}
+                    className="hero-photo-img"
+                  />
+                </div>
+                <div className="hero-role-badge">
+                  <Badge
+                    background="neutral-alpha-weak"
+                    paddingX="12"
+                    paddingY="4"
+                    onBackground="neutral-strong"
+                    textVariant="label-default-s"
+                    arrow={false}
+                  >
+                    <Row gap="8" vertical="center" paddingY="2">
+                      <span className="role-dot" />
+                      <Text variant="label-default-s" onBackground="neutral-strong">
+                        {person.role}
+                      </Text>
+                    </Row>
+                  </Badge>
+                </div>
               </div>
-            </div>
-          </RevealFx>
-        </Column>
+            </RevealFx>
+          </Column>
 
-      </Row>
+        </Row>
 
-      {/* Stats row */}
-      <RevealFx translateY="8" delay={0.5} fillWidth>
-        <StatsRow />
-      </RevealFx>
+        {/* Stats */}
+        <RevealFx translateY="8" delay={0.5} fillWidth>
+          <StatsRow />
+        </RevealFx>
+
+      </Column>
 
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
