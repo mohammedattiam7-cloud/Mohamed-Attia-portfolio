@@ -12,7 +12,7 @@ type Props = {
 };
 
 const defaults: Props = {
-  eyebrow: "Outcome & Reflection",
+  eyebrow: "Outcome & reflection",
   heading: "What shipped and what I'd do next",
   delivered: [
     { value: "75+",            label: "screens" },

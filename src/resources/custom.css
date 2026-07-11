@@ -72,6 +72,75 @@ html {
   scroll-behavior: smooth;
 }
 
+.hero-heading {
+  font-size: 60px !important;
+}
+
+.hero-subline {
+  font-size: 20px !important;
+  line-height: 32px !important;
+}
+
+.hero-subline strong {
+  color: var(--brand-on-background-medium);
+  font-weight: var(--font-weight-strong, 600);
+}
+
+/* ─── Hero photo ─── */
+.hero-photo-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.hero-photo-ring {
+  --hero-size: 340px;
+  width: var(--hero-size);
+  height: var(--hero-size);
+  border-radius: 50%;
+  border: 1.5px dashed var(--neutral-alpha-medium);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hero-photo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-role-badge {
+  position: absolute;
+  bottom: 24px;
+  right: -16px;
+}
+
+.role-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--brand-solid-strong);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-photo-ring {
+    --hero-size: 220px;
+  }
+
+  .hero-role-badge {
+    right: 0;
+    bottom: 8px;
+  }
+}
+
 .live-dot {
   display: inline-block;
   width: 8px;

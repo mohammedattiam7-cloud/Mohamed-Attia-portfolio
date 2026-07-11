@@ -57,7 +57,7 @@ export const TokenDecisions: React.FC = () => {
 
   const header = (
     <Column gap="12">
-      <Heading as="h2" variant="heading-strong-xl">Two Decisions That Made It Scale</Heading>
+      <Heading as="h2" variant="heading-strong-xl">Two decisions that made it scale</Heading>
       <Text variant="body-default-l" onBackground="neutral-weak">
         Language handled as a switchable mode, not a duplicated layout. Token names built on a fixed grammar. Semantic scales so a brand swap never touches a single component.
       </Text>

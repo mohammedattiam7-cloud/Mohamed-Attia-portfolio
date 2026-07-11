@@ -23,8 +23,8 @@ const contactRows: ContactRow[] = [
     display: "+20 100 203 7811",
     copyValue: "+201002037811",
     actions: [
-      { label: "Call Me", href: "tel:+201002037811" },
-      { label: "Send Hi", href: "https://wa.me/201002037811", external: true },
+      { label: "Call me", href: "tel:+201002037811" },
+      { label: "Send hi", href: "https://wa.me/201002037811", external: true },
     ],
   },
   {

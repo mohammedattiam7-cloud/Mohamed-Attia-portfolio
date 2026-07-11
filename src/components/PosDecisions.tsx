@@ -18,7 +18,7 @@ type DecisionCard = {
 
 const cards: DecisionCard[] = [
   {
-    title: "Decision 1 – Automated Menu Building",
+    title: "Decision 1 – Automated menu building",
     insight: "The success or failure of any point-of-sale (POS) system hinges on the structure of its menu, including items, sizes, extra options, and promotions. Other systems forced restaurant owners to build menus manually, resulting in lost customers.",
     decision: "The easiest solution was an optimized form. I decided to eliminate the form entirely. The restaurant owner photographs their paper menu, and AI builds the entire structure, shifting their role from creation to review. A manual editor covers any gaps left by the AI. Promotions, such as \"buy one, get one free,\" are added to the form as a general rule, not as an alternative.",
     why: "I shifted the heavy lifting from the user to the system.",

@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Mohamed",
   lastName: "Attia",
   name: `Mohamed Attia`,
-  role: "UI/UX Designer",
+  role: "UI/UX designer",
   avatar: "/images/profile.PNG",
   email: "example@gmail.com",
   location: "Africa/Cairo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -60,7 +60,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Crafting Digital Experiences<br />That Make Sense</>,
+  headline: <>Hi, I'm Mohamed Attia</>,
   featured: {
     display: true,
     title: (
@@ -73,11 +73,7 @@ const home: Home = {
     ),
     href: "",
   },
-  subline: (
-    <>
-    I'm a UI/UX Designer based in Egypt, focused on creating user-centered digital products<br />that solve real problems and deliver smooth, meaningful experiences.
-</>
-  ),
+  subline: <>I'm a UI/UX Designer based in Egypt with 4+ years of experience creating user-centered digital products. I focus on solving real problems and turning complex flows into smooth, meaningful experiences that people actually enjoy using.</>,
 };
 
 const about: About = {

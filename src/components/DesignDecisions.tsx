@@ -16,7 +16,7 @@ const cards = [
   },
   {
     insight: "Everything lived in separate tools.",
-    decision: "One Home that summarizes tasks, requests, and attendance, each with a \"See all\" entry point.",
+    decision: "One home that summarizes tasks, requests, and attendance, each with a \"See all\" entry point.",
     goal: "Delivers the core promise while keeping it simple.",
     imageSrc: "/images/projects/vacay-track/image05.jpg",
     imageAlt: "Home dashboard with tasks, requests, attendance and See all links",
@@ -58,7 +58,7 @@ export const DesignDecisions: React.FC = () => {
 
   const header = (
     <Column gap="8">
-      <Heading as="h2" variant="heading-strong-xl">Design Decisions</Heading>
+      <Heading as="h2" variant="heading-strong-xl">Design decisions</Heading>
       <Text variant="body-default-l" onBackground="neutral-weak">
         Two decisions shaped directly by what I found in research.
       </Text>

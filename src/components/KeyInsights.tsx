@@ -26,7 +26,7 @@ export const KeyInsights: React.FC = () => (
   <Column fillWidth gap="xl" marginTop="8" marginBottom="8">
     <Column gap="8">
       <Heading as="h2" variant="heading-strong-xl">
-        Key Insights
+        Key insights
       </Heading>
       <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
         Synthesis pointed to four insights that shaped every design decision that followed

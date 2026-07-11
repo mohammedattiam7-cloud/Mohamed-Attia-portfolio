@@ -2,6 +2,7 @@ import {
   Heading,
   Text,
   Button,
+  IconButton,
   RevealFx,
   Column,
   Badge,
@@ -9,7 +10,7 @@ import {
   Schema,
   Meta,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL } from "@/resources";
+import { home, about, person, baseURL, social } from "@/resources";
 import { Connect, StatsRow } from "@/components";
 import { Projects } from "@/components/work/Projects";
 
@@ -23,9 +24,13 @@ export async function generateMetadata() {
   });
 }
 
-
+const HERO_SOCIALS = ["LinkedIn", "Behance", "Dribbble", "Instagram"];
 
 export default function Home() {
+  const heroSocials = social
+    .filter((item) => HERO_SOCIALS.includes(item.name))
+    .sort((a, b) => HERO_SOCIALS.indexOf(a.name) - HERO_SOCIALS.indexOf(b.name));
+
   return (
     <Column fillWidth maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
@@ -41,16 +46,15 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
+
+      {/* Hero — two column */}
+      <Row fillWidth gap="64" vertical="center" s={{ direction: "column", gap: "xl" }}>
+
+        {/* ── Left: text content ── */}
+        <Column flex={1} gap="l" align="start">
+
           {home.featured.display && (
-            <RevealFx
-              fillWidth
-              horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
-            >
+            <RevealFx fillWidth paddingTop="16">
               <Badge
                 background="brand-alpha-weak"
                 paddingX="12"
@@ -63,45 +67,109 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
+
+          <RevealFx translateY="4" delay={0.1} fillWidth>
+            <Heading wrap="balance" variant="display-strong-l" className="hero-heading">
+              {home.headline}
+            </Heading>
+          </RevealFx>
+
+          <RevealFx translateY="8" delay={0.2} fillWidth>
+            <Text
+              wrap="balance"
+              onBackground="neutral-weak"
+              variant="body-default-l"
+              className="hero-subline"
+            >
+              {home.subline}
+            </Text>
+          </RevealFx>
+
+          <RevealFx translateY="8" delay={0.3} fillWidth>
+            <Row gap="12" s={{ direction: "column" }}>
+              <Button
+                data-border="rounded"
+                href="/work"
+                variant="primary"
+                size="m"
+                weight="default"
+              >
+                View My Work
+              </Button>
+              <Button
+                data-border="rounded"
+                href="https://drive.google.com/file/d/1knNU1509qNZO7qu2meNxM4wKYO8evhcN/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                size="m"
+                weight="default"
+                suffixIcon="arrowRight"
+              >
+                View Resume
+              </Button>
+            </Row>
+          </RevealFx>
+
+          <RevealFx delay={0.4} fillWidth>
+            <Row gap="4">
+              {heroSocials.map((item) => (
+                <IconButton
+                  key={item.name}
+                  href={item.link}
+                  icon={item.icon}
+                  variant="ghost"
+                  size="m"
+                  aria-label={item.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              ))}
+            </Row>
+          </RevealFx>
+
         </Column>
-        <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-          <Heading wrap="balance" variant="display-strong-l" align="center">
-            {home.headline}
-          </Heading>
-        </RevealFx>
-        <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
-          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" align="center">
-            {home.subline}
-          </Text>
-        </RevealFx>
-        <RevealFx translateY="8" delay={0.4} fillWidth horizontal="center">
-          <Row gap="12" horizontal="center" s={{ direction: "column", align: "center" }}>
-            <Button
-              data-border="rounded"
-              href="https://drive.google.com/file/d/1knNU1509qNZO7qu2meNxM4wKYO8evhcN/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-              size="m"
-              weight="default"
-            >
-              View Resume
-            </Button>
-            <Button
-              data-border="rounded"
-              href="#connect"
-              variant="secondary"
-              size="m"
-              weight="default"
-            >
-              Contact me
-            </Button>
-          </Row>
-        </RevealFx>
-        <RevealFx translateY="8" delay={0.6} fillWidth horizontal="center" paddingTop="32">
-          <StatsRow />
-        </RevealFx>
-      </Column>
+
+        {/* ── Right: profile photo ── */}
+        <Column horizontal="center" vertical="center">
+          <RevealFx translateY="8" delay={0.2}>
+            <div className="hero-photo-wrapper">
+              <div className="hero-photo-ring">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={person.avatar}
+                  alt={person.name}
+                  className="hero-photo-img"
+                />
+              </div>
+              <div className="hero-role-badge">
+                <Badge
+                  background="neutral-alpha-weak"
+                  paddingX="12"
+                  paddingY="4"
+                  onBackground="neutral-strong"
+                  textVariant="label-default-s"
+                  arrow={false}
+                >
+                  <Row gap="8" vertical="center" paddingY="2">
+                    <span className="role-dot" />
+                    <Text variant="label-default-s" onBackground="neutral-strong">
+                      {person.role}
+                    </Text>
+                  </Row>
+                </Badge>
+              </div>
+            </div>
+          </RevealFx>
+        </Column>
+
+      </Row>
+
+      {/* Stats row */}
+      <RevealFx translateY="8" delay={0.5} fillWidth>
+        <StatsRow />
+      </RevealFx>
+
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
