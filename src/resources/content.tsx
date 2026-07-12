@@ -73,7 +73,7 @@ const home: Home = {
     ),
     href: "",
   },
-  subline: <>I'm a UI/UX Designer based in Egypt with 4+ years of experience creating user-centered digital products. I focus on solving real problems and turning complex flows into smooth, meaningful experiences that people actually enjoy using.</>,
+  subline: <>I'm a UI/UX Designer based in Egypt with 3+ years of experience creating user-centered digital products. I focus on solving real problems and turning complex flows into smooth, meaningful experiences that people actually enjoy using.</>,
 };
 
 const about: About = {
