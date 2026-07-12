@@ -1,10 +1,10 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Mohamed",
   lastName: "Attia",
-  name: `Mohamed Attia`,
+  name: "Mohamed Attia",
   role: "UI/UX designer",
   avatar: "/images/profile.PNG",
   email: "example@gmail.com",
@@ -97,7 +97,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Mohamed Attia is a UI/UX Designer based in Egypt with 4 years of experience. I design digital products that feel intuitive and actually solve real problems — not just look good. I enjoy taking messy, complex challenges and turning them into clear, simple experiences. My approach mixes research, strategy, and visual design to keep both users and the business happy.
+        Mohamed Attia is a UI/UX Designer based in Egypt with 3+ years of experience. I design digital products that feel intuitive and actually solve real problems — not just look good. I enjoy taking messy, complex challenges and turning them into clear, simple experiences. My approach mixes research, strategy, and visual design to keep both users and the business happy.
       </>
     ),
   },
@@ -110,12 +110,8 @@ const about: About = {
         timeframe: "May 2025 – Present",
         role: "UI/UX Designer",
         achievements: [
-          <>
-            Lead designer for a full B2B SaaS ecosystem (POS, ERP, KDS, digital menus), owning the product from MVP to V2 across web, iOS, and Android.
-          </>,
-          <>
-            Built a scalable design system with tokens and Figma variables, and designed AI-powered F&B analytics backed by competitor and user research across MENA.
-          </>,
+          "Lead designer for a full B2B SaaS ecosystem (POS, ERP, KDS, digital menus), owning the product from MVP to V2 across web, iOS, and Android.",
+          "Built a scalable design system with tokens and Figma variables, and designed AI-powered F&B analytics backed by competitor and user research across MENA.",
         ],
         images: [],
       },
@@ -124,12 +120,8 @@ const about: About = {
         timeframe: "Jul 2025 – Present",
         role: "Design Systems Mentor · Volunteer",
         achievements: [
-          <>
-            Mentored 30+ designers across 3 training rounds on design tokens and scalable system architecture.
-          </>,
-          <>
-            Led deep-dive sessions that bridged the gap between UI design and developer handoff, clearing common misconceptions around tokens and components.
-          </>,
+          "Mentored 30+ designers across 3 training rounds on design tokens and scalable system architecture.",
+          "Led deep-dive sessions that bridged the gap between UI design and developer handoff, clearing common misconceptions around tokens and components.",
         ],
         images: [],
       },
