@@ -10,7 +10,7 @@ interface StatConfig {
 }
 
 const STATS: StatConfig[] = [
-  { value: 4,   suffix: "+", label: "Years experience" },
+  { value: 3,   suffix: "+", label: "Years experience" },
   { value: 20,  suffix: "+", label: "Projects completed" },
   { value: 100, suffix: "%", label: "Client satisfaction" },
 ];
